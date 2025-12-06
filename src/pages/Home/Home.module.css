@@ -1,0 +1,111 @@
+.home {
+  width: 100%;
+  animation: fadeIn 0.8s ease;
+}
+
+/* HERO SECTION */
+.hero {
+  background: url("/images/hero-bg.jpg") center/cover no-repeat;
+  height: 70vh;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+}
+
+.heroContent {
+  background: rgba(255, 255, 255, 0.65);
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  max-width: 480px;
+}
+
+.heroContent h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.6rem;
+}
+
+.heroBtn {
+  padding: 0.8rem 1.6rem;
+  background: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.heroBtn:hover {
+  background: #333;
+}
+
+/* FEATURED SECTION */
+.featuredSection {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.featuredSection h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* CATEGORY SECTION */
+.categorySection {
+  margin-top: 4rem;
+  padding: 2rem 4rem;
+}
+
+.categorySection h2 {
+  text-align: left;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.8rem;
+}
+
+.categoryCard {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.categoryCard img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.categoryCard:hover img {
+  transform: scale(1.06);
+}
+
+.catOverlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,64 @@
+.profilePage {
+  padding: 2rem 3rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+.card {
+  background: #fafafa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.label {
+  font-weight: 600;
+  color: #444;
+  margin-top: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 0.4rem;
+}
+
+.saveBtn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.3rem;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.saveBtn:hover {
+  opacity: 0.85;
+}
+
+.resetPassword {
+  margin-top: 1.2rem;
+  background: #444;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.resetPassword:hover {
+  opacity: 0.9;
+}

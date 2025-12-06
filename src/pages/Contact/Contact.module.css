@@ -1,0 +1,116 @@
+.contactPage {
+  padding: 2rem 4rem;
+  animation: fadeIn 0.5s ease;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.container {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* FORM SECTION */
+.form {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form label {
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input,
+.form textarea {
+  margin-top: 0.4rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: black;
+  outline: none;
+}
+
+.submitBtn {
+  padding: 0.9rem 1.6rem;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background: #333;
+}
+
+.error {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #d33;
+}
+
+/* RIGHT SIDE INFO */
+.infoSide {
+  flex: 1;
+  min-width: 260px;
+}
+
+.infoSide h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.3rem;
+}
+
+.infoSide p {
+  color: #444;
+}
+
+.socialList {
+  list-style: none;
+  padding: 0;
+}
+
+.socialList li {
+  margin-bottom: 0.5rem;
+}
+
+.socialList a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.2s ease;
+}
+
+.socialList a:hover {
+  color: #444;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

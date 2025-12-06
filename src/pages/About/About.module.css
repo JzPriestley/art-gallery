@@ -1,0 +1,95 @@
+.aboutPage {
+  padding: 2rem 4rem;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Page Header */
+.headerSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.headerSection h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Main Content Layout */
+.container {
+  display: flex;
+  gap: 3rem;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+/* Artist Image */
+.imageWrapper {
+  flex: 1;
+  min-width: 280px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 540px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Text Content */
+.textWrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+.textWrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.textWrapper p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.65;
+  margin-bottom: 1.3rem;
+}
+
+/* Skills / Specialties */
+.skills {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 2rem;
+}
+
+.skills li {
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-size: 1.05rem;
+}
+
+/* Contact Button */
+.contactBtn {
+  padding: 0.8rem 1.6rem;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.contactBtn:hover {
+  background: #333;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

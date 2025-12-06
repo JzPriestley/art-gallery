@@ -1,0 +1,116 @@
+.productPage {
+  padding: 2rem 4rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* IMAGE SIDE */
+.imageWrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+  max-height: 550px;
+  transition: 0.3s ease;
+}
+
+.mainImage:hover {
+  filter: brightness(0.95);
+}
+
+/* INFO SIDE */
+.info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.info h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.detail {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.description {
+  margin: 1rem 0 2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* BUTTONS */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.buyBtn {
+  padding: 0.8rem 1.6rem;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buyBtn:hover {
+  background: #333;
+}
+
+.favoriteBtn {
+  padding: 0.8rem 1.2rem;
+  background: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.favoriteBtn:hover {
+  background: #ddd;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+/* NOT FOUND PAGE */
+.notFound {
+  padding: 4rem;
+  text-align: center;
+}
+
+.backBtn {
+  padding: 0.7rem 1.3rem;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
