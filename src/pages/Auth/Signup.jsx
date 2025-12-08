@@ -1,51 +1,22 @@
-import React from "react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Auth.module.css";
-import { supabase } from "../../lib/supabase";
 
 export default function Signup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-
   const [error, setError] = useState("");
-  const [valid, setValid] = useState(false);
 
-  const navigate = useNavigate();
+  // Vite environment variable
+  const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === "true";
 
-  function validatePassword(pw) {
-    return (
-      pw.length >= 8 &&
-      /[A-Z]/.test(pw) &&
-      /[0-9]/.test(pw) &&
-      /[^A-Za-z0-9]/.test(pw)
-    );
-  }
-
-  async function handleSignup(e) {
+  function handleSignup(e) {
     e.preventDefault();
-    setError("");
 
-    if (!validatePassword(password)) {
-      setError("Weak password: Must be 8+ chars, uppercase, number, symbol");
+    if (DEMO_MODE) {
+      setError("Signup is disabled in demo mode. Please use the demo account:");
       return;
     }
 
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { full_name: name },
-      },
-    });
-
-    if (error) {
-      setError(error.message);
-      return;
-    }
-
-    navigate("/login");
+    // Otherwise, normal signup logic here
   }
 
   return (
@@ -54,43 +25,22 @@ export default function Signup() {
         <h2>Create Account</h2>
         <p className={styles.subtitle}>Join our art community</p>
 
-        {error && <p className={styles.error}>{error}</p>}
+        {error && (
+          <div className={styles.error}>
+            <p>{error}</p>
+            <p><b>Email:</b> demo@artshop.com</p>
+            <p><b>Password:</b> demo1234</p>
+          </div>
+        )}
 
+        {/* FORM FIELDS DISABLED IN DEMO MODE */}
         <form onSubmit={handleSignup} className={styles.form}>
+          <input type="text" placeholder="Full name" disabled />
+          <input type="email" placeholder="Email address" disabled />
+          <input type="password" placeholder="Password" disabled />
 
-          <input
-            type="text"
-            placeholder="Full name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-
-          <input
-            type="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <input
-            type="password"
-            placeholder="Password (8+ chars, uppercase, number, symbol)"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-              setValid(validatePassword(e.target.value));
-            }}
-            required
-          />
-
-          <button 
-            className={styles.primaryBtn}
-            disabled={!valid}
-            style={{ opacity: valid ? 1 : 0.5 }}
-          >
-            Sign Up
+          <button className={styles.primaryBtn} style={{ opacity: 0.6 }}>
+            Sign Up (Disabled)
           </button>
         </form>
 

@@ -5,6 +5,7 @@ import styles from "./Header.module.css";
 import { AuthContext } from "../../Context/AuthContext";
 import { FavoritesContext } from "../../Context/FavoritesContext";
 import { CartContext } from "../../Context/CartContext";
+import DemoBanner from "../DemoBanner/DemoBanner";
 
 
 export default function Header() {
@@ -24,7 +25,9 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
+    <>
+    <DemoBanner />
+    <header className={styles.header} style={{ marginTop: "32px" }}>
 
       {/* LOGO */}
       <div className={styles.logo}>
@@ -107,5 +110,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }

@@ -1,35 +1,32 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./Auth.module.css";
 import { supabase } from "../../lib/supabase";
+// import msgStyles from "./AuthMessageBox.module.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("demo@artshop.com");
+  const [password, setPassword] = useState("demo1234");
   const [error, setError] = useState("");
 
-  // Read redirect query parameter (e.g. ?redirect=/product/12)
   const [params] = useSearchParams();
   const redirectTo = params.get("redirect") || "/";
-
   const navigate = useNavigate();
 
   async function handleLogin(e) {
     e.preventDefault();
     setError("");
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
 
     if (error) {
-      setError(error.message);
+      setError("Invalid demo credentials.");
       return;
     }
 
-    // 🔥 REDIRECT to the original page (product, or whatever)
     navigate(redirectTo);
   }
 
@@ -37,12 +34,24 @@ export default function Login() {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <h2>Welcome Back</h2>
-        <p className={styles.subtitle}>Login to continue</p>
+        <p className={styles.subtitle}>Demo login enabled</p>
+
+        {/* DEMO LOGIN INFO */}
+        <div className={styles.infoBox}>
+          <p><b>Demo Account:</b></p>
+          
+        </div>
+
+        {/* <div className={msgStyles.box}>
+          <p><b>Demo Account:</b></p>
+          <p>Email: demo@artshop.com</p>
+          <p>Password: demo1234</p>
+        </div> */}
+
 
         {error && <p className={styles.error}>{error}</p>}
 
         <form onSubmit={handleLogin} className={styles.form}>
-
           <input
             type="email"
             placeholder="Email address"
@@ -63,24 +72,11 @@ export default function Login() {
         </form>
 
         <p className={styles.forgot}>
-          <button
-            type="button"
-            onClick={async () => {
-              const emailInput = prompt("Enter your email:");
-              if (!emailInput) return;
-
-              const { error } = await supabase.auth.resetPasswordForEmail(emailInput);
-
-              if (error) alert(error.message);
-              else alert("Password reset email sent!");
-            }}
-          >
-            Forgot Password?
-          </button>
+          <span style={{ opacity: 0.5 }}>Forgot Password? (disabled)</span>
         </p>
 
         <p className={styles.switchText}>
-          Don’t have an account? <Link to="/signup">Sign Up</Link>
+          Need an account? <span style={{ opacity: 0.5 }}>Signup disabled</span>
         </p>
       </div>
     </div>
