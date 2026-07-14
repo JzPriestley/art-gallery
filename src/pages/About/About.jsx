@@ -21,10 +21,10 @@ export default function About() {
 
         {/* RIGHT — Bio */}
         <div className={styles.textWrapper}>
-          <h2>Hello, I'm Jezebel Priestley</h2>
+          <h2>Hello!</h2>
 
           <p>
-            I’m an artist based in Germany, creating expressive
+            I’m an artist, creating expressive
             artworks inspired by nature, emotions, and the depth of human
             experience. For the past several years, I’ve experimented with oils,
             acrylics, digital mediums, and mixed-media techniques to explore

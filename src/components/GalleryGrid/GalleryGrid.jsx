@@ -31,7 +31,6 @@ export default function GalleryGrid({ artworks }) {
               className={styles.image}
               onClick={() => handleOpen(i)}
             />
-
             <div className={styles.info}>
               <h3>{art.title}</h3>
               <p>{art.category} — {art.medium}</p>
